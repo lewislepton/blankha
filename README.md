@@ -2,4 +2,4 @@
 
 blank project for a kha game or whatever
 
-![image](img/blanka.gif) ![image](img/roll.png) ![image](img/dizzy.png) ![image](img/walk.png)
+![image](img/blanka.gif) ![image](img/roll.gif) ![image](img/dizzy.gif) ![image](img/walk.gif)
