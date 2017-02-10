@@ -1,6 +1,6 @@
 # BLANKHA
 
-![image](img/blanka.gif) ![image](img/roll.gif) ![image](img/dizzy.gif) ![image](img/slide.gif) ![image](img/fruit.gif)
+![image](img/roll.gif) ![image](img/dizzy.gif) ![image](img/slide.gif) ![image](img/fruit.gif)
 
 ------
 
