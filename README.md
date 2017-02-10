@@ -14,4 +14,5 @@ keyboard & mouse controls are blank as people have different things they deem as
 have phün & happy coding
 
 *this project is not in association with street fighter or capcom - though i have spilled most of my childhood playing the game[s]
+
 ** i also do not take credit for the GIFs - they are made by WAY more talented people than myself
