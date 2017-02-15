@@ -7,7 +7,9 @@ import kha.Key;
 import kha.input.Keyboard;
 import kha.input.Mouse;
 
-import state.*;
+import state.MenuState;
+import state.OptionState;
+import state.PlayState;
 
 enum GameState {
 	Menu;
@@ -18,8 +20,8 @@ enum GameState {
 class Project {
 	var _gameState:GameState;
 	var _menuState:MenuState;
-	var _playState:PlayState;
 	var _optionState:OptionState;
+	var _playState:PlayState;
 
 	public function new() {
 		setupStates();
@@ -60,12 +62,12 @@ class Project {
 		_gameState = GameState.Menu;
 	}
 
-	public function setPlayState(){
-		_gameState = GameState.Play;
-	}
-
 	public function setOptionState(){
 		_gameState = GameState.Option;
+	}
+
+	public function setPlayState(){
+		_gameState = GameState.Play;
 	}
 
 	public function onKeyDown(key:Key, char:String){
