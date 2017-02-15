@@ -1,21 +1,19 @@
 package char;
 
 import kha.graphics2.Graphics;
-using kha.graphics2.GraphicsExtension;
 import kha.Color;
+import kha.Image;
 import kha.Assets;
 
 class Player {
-	public var x:Int;
-	public var y:Int;
-	public var width:Int;
-	public var height:Int;
+	public var x:Float;
+	public var y:Float;
+	public var image:Image;
 
-	public function new(x:Int, y:Int, width:Int, height:Int){
+	public function new(x:Float, y:Float){
 		this.x = x;
 		this.y = y;
-		this.width = width;
-		this.height = height;
+		image = Assets.images.blanka;
 	}
 
 	public function update(){
@@ -23,7 +21,6 @@ class Player {
 	}
 
 	public function render(graphics:Graphics){
-		graphics.color = Color.Pink;
-		graphics.fillRect(x, y, width, height);
+		graphics.drawImage(image, x, y);
 	}
 }

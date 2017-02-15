@@ -23,7 +23,7 @@ class Project {
 
 	public function new() {
 		setupStates();
-		setMenuState();
+		setPlayState();
 
 		Keyboard.get().notify(onKeyDown, onKeyUp);
 		Mouse.get().notify(onMouseDown, onMouseUp, onMouseMove, null);
@@ -69,22 +69,37 @@ class Project {
 	}
 
 	public function onKeyDown(key:Key, char:String){
-		
+		switch (_gameState){
+			///
+		default: return;
+		}
 	}
 
 	public function onKeyUp(key:Key, char:String){
-		
+		switch (_gameState){
+			///
+		default: return;
+		}
 	}
 
 	public function onMouseDown(button:Int, x:Int, y:Int){
-		
+		switch (_gameState){
+			///
+		default: return;
+		}
 	}
 
 	public function onMouseUp(button:Int, x:Int, y:Int){
-		
+		switch (_gameState){
+			///
+		default: return;
+		}
 	}
 
 	public function onMouseMove(x:Int, y:Int, cx:Int, cy:Int){
-		
+		switch (_gameState){
+			///
+		default: return;
+		}
 	}
 }
