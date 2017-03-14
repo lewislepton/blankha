@@ -7,22 +7,24 @@ import kha.Assets;
 
 import char.Player;
 
-class PlayState {
+class PlayState extends State{
 	public var player:Player;
 
-	public function new(){
+	public function new() {
+		super();
+
 		player = new Player(256, 128);
 	}
 
-	public function update(){
+	override public function update() {
 		
 	}
 
-	public function render(graphics:Graphics){
+	override public function render(graphics:Graphics) {
 		player.render(graphics);
 	}
 
-	public function onMouseMove(x:Int, y:Int){
+	override public function onMouseMove(x:Int, y:Int, cx:Int, cy:Int) {
 		player.x = x;
 		player.y = y;
 	}

@@ -5,16 +5,16 @@ using kha.graphics2.GraphicsExtension;
 import kha.Color;
 import kha.Assets;
 
-class MenuState {
-	public function new(){
+class MenuState extends State {
+	public function new() {
+		super();
+	}
+
+	override public function update() {
 		
 	}
 
-	public function update(){
-		
-	}
-
-	public function render(graphics:Graphics){
+	override public function render(graphics:Graphics) {
 		
 	}
 }

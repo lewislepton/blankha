@@ -11,97 +11,60 @@ import state.MenuState;
 import state.OptionState;
 import state.PlayState;
 
-enum GameState {
-	Menu;
-	Option;
-	Play;
-}
-
-class Project {
-	var _gameState:GameState;
-	var _menuState:MenuState;
-	var _optionState:OptionState;
-	var _playState:PlayState;
-
+class Project {	
 	public function new() {
-		setupStates();
-		setPlayState();
+		setupStates();		
 
 		Keyboard.get().notify(onKeyDown, onKeyUp);
 		Mouse.get().notify(onMouseDown, onMouseUp, onMouseMove, null);
 	}
 
 	public function update():Void {
-		switch (_gameState){
-			case GameState.Menu: _menuState.update();
-			case GameState.Option: _optionState.update();
-			case GameState.Play: _playState.update();
-		default: return;
-		}
+		if (State.activeState != null)
+			State.activeState.update();		
 	}
 
 	public function render(framebuffer:Framebuffer):Void {
 		var graphics = framebuffer.g2;
 		graphics.begin();
-		switch (_gameState){
-			case GameState.Menu: _menuState.render(graphics);
-			case GameState.Option: _optionState.render(graphics);
-			case GameState.Play: _playState.render(graphics);
-		default: return;
-		}
+		
+		if (State.activeState != null)
+			State.activeState.render(graphics);
+
 		graphics.end();
 	}
 
-	private function setupStates(){
-		_menuState = new MenuState();
-		_optionState = new OptionState();
-		_playState = new PlayState();
+	private function setupStates() {
+		State.setup();
+		State.add("menu", new MenuState());
+		State.add("option", new OptionState());
+		State.add("play", new PlayState());
+
+		State.setActive("play");
 	}
 
-	public function setMenuState(){
-		_gameState = GameState.Menu;
+	public function onKeyDown(key:Key, char:String) {
+		if (State.activeState != null)
+			State.activeState.onKeyDown(key, char);
 	}
 
-	public function setOptionState(){
-		_gameState = GameState.Option;
+	public function onKeyUp(key:Key, char:String) {
+		if (State.activeState != null)
+			State.activeState.onKeyUp(key, char);
 	}
 
-	public function setPlayState(){
-		_gameState = GameState.Play;
+	public function onMouseDown(button:Int, x:Int, y:Int) {
+		if (State.activeState != null)
+			State.activeState.onMouseDown(button, x, y);
 	}
 
-	public function onKeyDown(key:Key, char:String){
-		switch (_gameState){
-			///
-		default: return;
-		}
+	public function onMouseUp(button:Int, x:Int, y:Int) {
+		if (State.activeState != null)
+			State.activeState.onMouseUp(button, x, y);
 	}
 
-	public function onKeyUp(key:Key, char:String){
-		switch (_gameState){
-			///
-		default: return;
-		}
-	}
-
-	public function onMouseDown(button:Int, x:Int, y:Int){
-		switch (_gameState){
-			///
-		default: return;
-		}
-	}
-
-	public function onMouseUp(button:Int, x:Int, y:Int){
-		switch (_gameState){
-			///
-		default: return;
-		}
-	}
-
-	public function onMouseMove(x:Int, y:Int, cx:Int, cy:Int){
-		switch (_gameState){
-			///
-		default: return;
-		}
+	public function onMouseMove(x:Int, y:Int, cx:Int, cy:Int) {
+		if (State.activeState != null)
+			State.activeState.onMouseMove(x, y, cx, cy);
 	}
 }
