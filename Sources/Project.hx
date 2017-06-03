@@ -3,7 +3,7 @@ package;
 import kha.Framebuffer;
 import kha.Color;
 import kha.Assets;
-import kha.Key;
+import kha.input.KeyCode;
 import kha.input.Keyboard;
 import kha.input.Mouse;
 
@@ -40,17 +40,17 @@ class Project {
 		State.add("option", new OptionState());
 		State.add("play", new PlayState());
 
-		State.setActive("play");
+		State.set("play");
 	}
 
-	public function onKeyDown(key:Key, char:String) {
+	public function onKeyDown(keyCode:Int){
 		if (State.activeState != null)
-			State.activeState.onKeyDown(key, char);
+			State.activeState.onKeyDown(keyCode);
 	}
 
-	public function onKeyUp(key:Key, char:String) {
+	public function onKeyUp(keyCode:Int){
 		if (State.activeState != null)
-			State.activeState.onKeyUp(key, char);
+			State.activeState.onKeyUp(keyCode);
 	}
 
 	public function onMouseDown(button:Int, x:Int, y:Int) {

@@ -1,7 +1,7 @@
 package;
 
 import kha.graphics2.Graphics;
-import kha.Key;
+import kha.input.KeyCode;
 
 class State {
 	public static var activeState:State;
@@ -13,9 +13,9 @@ class State {
 
 	public function render(graphics:Graphics) {}
 
-	public function onKeyDown(key:Key, char:String) {}
+	public function onKeyDown(keyCode:Int){}
 
-	public function onKeyUp(key:Key, char:String) {}
+	public function onKeyUp(keyCode:Int) {}
 
 	public function onMouseDown(button:Int, x:Int, y:Int) {}
 
@@ -36,7 +36,7 @@ class State {
 		states.remove(name);
 	}
 
-	public static function setActive(name:String) {
+	public static function set(name:String) {
 		activeState = states.get(name);
 	}
 }
