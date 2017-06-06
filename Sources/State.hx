@@ -1,7 +1,6 @@
 package;
 
 import kha.graphics2.Graphics;
-import kha.input.KeyCode;
 
 class State {
 	public static var activeState:State;
