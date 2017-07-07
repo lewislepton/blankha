@@ -43,12 +43,12 @@ class Project {
 		State.set("play");
 	}
 
-	public function onKeyDown(keyCode:Int){
+	public function onKeyDown(keyCode:KeyCode){
 		if (State.activeState != null)
 			State.activeState.onKeyDown(keyCode);
 	}
 
-	public function onKeyUp(keyCode:Int){
+	public function onKeyUp(keyCode:KeyCode){
 		if (State.activeState != null)
 			State.activeState.onKeyUp(keyCode);
 	}
