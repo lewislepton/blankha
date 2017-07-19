@@ -6,7 +6,7 @@
 
 blank project for a kha game or whatever you want to do in kha.
 
-just to save time having to create states, players etc. its super basic & i will update it will relevant things it should have.
+just to save time having to create states, players etc. its super basic & i will update it with relevant things it should have.
 
 i found myself typing the same thing everytime & while thats good for learning, can become boring if you just want to get on & work.
 keyboard & mouse controls are blank as people have different things they deem as important, its just to get people up & running.
