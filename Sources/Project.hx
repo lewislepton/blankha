@@ -20,16 +20,18 @@ class Project {
 	}
 
 	public function update():Void {
-		if (State.activeState != null)
-			State.activeState.update();		
+		if (State.activeState != null){
+			State.activeState.update();
+		}	
 	}
 
 	public function render(framebuffer:Framebuffer):Void {
 		var graphics = framebuffer.g2;
 		graphics.begin();
 		
-		if (State.activeState != null)
+		if (State.activeState != null){
 			State.activeState.render(graphics);
+		}
 
 		graphics.end();
 	}
@@ -44,27 +46,32 @@ class Project {
 	}
 
 	public function onKeyDown(keyCode:KeyCode){
-		if (State.activeState != null)
+		if (State.activeState != null){
 			State.activeState.onKeyDown(keyCode);
+		}
 	}
 
 	public function onKeyUp(keyCode:KeyCode){
-		if (State.activeState != null)
+		if (State.activeState != null){
 			State.activeState.onKeyUp(keyCode);
+		}
 	}
 
 	public function onMouseDown(button:Int, x:Int, y:Int) {
-		if (State.activeState != null)
+		if (State.activeState != null){
 			State.activeState.onMouseDown(button, x, y);
+		}
 	}
 
 	public function onMouseUp(button:Int, x:Int, y:Int) {
-		if (State.activeState != null)
+		if (State.activeState != null){
 			State.activeState.onMouseUp(button, x, y);
+		}
 	}
 
 	public function onMouseMove(x:Int, y:Int, cx:Int, cy:Int) {
-		if (State.activeState != null)
+		if (State.activeState != null){
 			State.activeState.onMouseMove(x, y, cx, cy);
+		}
 	}
 }
