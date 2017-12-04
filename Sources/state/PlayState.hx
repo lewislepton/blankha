@@ -25,7 +25,7 @@ class PlayState extends State{
 	}
 
 	override public function onMouseMove(x:Int, y:Int, cx:Int, cy:Int) {
-		player.x = x;
-		player.y = y;
+		player.x = x - player.image.width / 2;
+		player.y = y - player.image.height / 2;
 	}
 }
