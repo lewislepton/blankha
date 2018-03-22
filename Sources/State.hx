@@ -23,6 +23,16 @@ class State {
 
 	public function onMouseMove(x:Int, y:Int, cx:Int, cy:Int){}
 
+	public function onTouchDown(id:Int, x:Int, y:Int){}
+	
+	public function onTouchUp(id:Int, x:Int, y:Int){}
+
+	public function onTouchMove(id:Int, x:Int, y:Int){}
+
+	public function onGamepadAxis(axis:Int, value:Float){}
+
+	public function onGamepadButton(button:Int, value:Float){}
+
 	public static function setup(){
 		states = new Map<String, State>();
 	}
