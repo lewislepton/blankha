@@ -19,6 +19,8 @@ class Project {
 
 		Keyboard.get().notify(onKeyDown, onKeyUp);
 		Mouse.get().notify(onMouseDown, onMouseUp, onMouseMove, null);
+		Gamepad.get().notify(onGamepadAxis, onGamepadButton);
+		Surface.get().notify(onTouchDown, onTouchUp, onTouchMove);
 	}
 
 	public function update():Void {
